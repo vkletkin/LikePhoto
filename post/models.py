@@ -11,7 +11,6 @@ class Group(models.Model):
     pub_date = models.DateTimeField('Дата публикации', auto_now_add=True)
     name = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-
     author = models.ForeignKey(
         User, on_delete=models.CASCADE, related_name='author_group')
 

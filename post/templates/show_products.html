@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Все товары{% endblock %}
+{% block header %}Все товары с выручкой за поседний месяц{% endblock %}
+{% block content %}
+
+
+    {% for product in products %}
+    <h3>
+        Товар: {{ product.name }}, Цена: {{ product.price }} руб.
+    </h3>
+    <p>Кол-во: {{ product.quantity }}, Выручка: {{ product.revenue }}</p>
+    {% if not forloop.last %}<hr>{% endif %}
+    {% endfor %}
+
+{% endblock %}
