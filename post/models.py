@@ -25,7 +25,7 @@ class Post(models.Model):
         User, on_delete=models.CASCADE, related_name='author_posts')
     group = models.ForeignKey(Group, on_delete=models.CASCADE,
                               related_name='group_posts', blank=True, null=True)
-    rating = models.PositiveIntegerField()
+    rating = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to='posts/', blank=True, null=True)
-    #def __str__(self):
-     #   return self.image[:100]
+    # def __str__(self):
+    #   return self.image[:100]
